@@ -52,7 +52,15 @@ function Review() {
         }).catch((error) => {
             console.log(error)
         })
-        }else{
+        }else if(status!=="Approved" && double!=="Hello"){
+            ApproveService.updateRequest(id, leaves).then((response) => {
+                console.log(response)
+                usenavigate('/approvallist')
+            }).catch((error) => {
+                console.log(error)
+            }) 
+        }
+        else{
             alert("Hey")
         }
     }
